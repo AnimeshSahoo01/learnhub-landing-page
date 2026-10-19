@@ -1,14 +1,321 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <title>LearnHub</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnHub — Learn to Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Learn<span>Hub</span></a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#pricing">Paid Courses</a></li>
+          <li><a href="#contact" class="btn btn-small">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-text reveal">
+        <p class="tag">🚀 Start your coding journey today</p>
+        <h1>Learn skills that <span class="highlight" id="typed">build careers</span></h1>
+        <p class="subtitle">
+          Hands-on courses in Web Development, JavaScript, Python and more —
+          taught through real projects, by mentors who ship code every day.
+        </p>
+        <div class="hero-buttons">
+          <a href="#courses" class="btn">Explore Courses</a>
+          <a href="#pricing" class="btn btn-outline">View Plans</a>
+        </div>
+        <div class="stats">
+          <div><h3 class="counter" data-target="12000">0</h3><p>Students</p></div>
+          <div><h3 class="counter" data-target="45">0</h3><p>Courses</p></div>
+          <div><h3 class="counter" data-target="98">0</h3><p>% Satisfaction</p></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="code-card">
+          <div class="dots"><span></span><span></span><span></span></div>
+<pre><code><span class="k">const</span> you = {
+  skills: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JS"</span>],
+  status: <span class="s">"learning"</span>,
+};
+
+<span class="k">function</span> <span class="f">levelUp</span>(dev) {
+  <span class="k">return</span> { ...dev, status: <span class="s">"hired 🎉"</span> };
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="about">
+    <div class="container about-inner">
+      <div class="about-img reveal">
+        <div class="about-badge">5+ Years<br /><small>of teaching</small></div>
+      </div>
+      <div class="about-text reveal">
+        <p class="section-tag">About Us</p>
+        <h2>We make learning to code simple &amp; practical</h2>
+        <p>
+          LearnHub started with one goal: help beginners become confident developers
+          without drowning in theory. Every course is built around projects you can
+          put on your portfolio.
+        </p>
+        <ul class="features">
+          <li>✅ Project-based curriculum</li>
+          <li>✅ Lifetime access to course material</li>
+          <li>✅ Community &amp; mentor support</li>
+          <li>✅ Certificate of completion</li>
+        </ul>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section alt" id="courses">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag">Courses</p>
+        <h2>Free courses to get you started</h2>
+      </div>
+      <div class="filter-buttons reveal">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="programming">Programming</button>
+        <button class="filter" data-filter="design">Design</button>
+      </div>
+      <div class="grid course-grid">
+        <div class="card course reveal" data-category="web">
+          <div class="course-icon" style="--c:#e34c26">🌐</div>
+          <h3>HTML &amp; CSS Basics</h3>
+          <p>Build and style your first web pages from scratch.</p>
+          <div class="meta"><span>⏱ 6h</span><span>📚 24 lessons</span></div>
+        </div>
+        <div class="card course reveal" data-category="programming">
+          <div class="course-icon" style="--c:#f7df1e">⚡</div>
+          <h3>JavaScript Fundamentals</h3>
+          <p>Variables, functions, DOM and events — the core of the web.</p>
+          <div class="meta"><span>⏱ 10h</span><span>📚 38 lessons</span></div>
+        </div>
+        <div class="card course reveal" data-category="programming">
+          <div class="course-icon" style="--c:#3776ab">🐍</div>
+          <h3>Python for Beginners</h3>
+          <p>Learn programming logic with clean, readable Python.</p>
+          <div class="meta"><span>⏱ 8h</span><span>📚 30 lessons</span></div>
+        </div>
+        <div class="card course reveal" data-category="design">
+          <div class="course-icon" style="--c:#a259ff">🎨</div>
+          <h3>UI/UX Design Intro</h3>
+          <p>Design principles, color, typography and Figma basics.</p>
+          <div class="meta"><span>⏱ 5h</span><span>📚 18 lessons</span></div>
+        </div>
+        <div class="card course reveal" data-category="web">
+          <div class="course-icon" style="--c:#38bdf8">📱</div>
+          <h3>Responsive Design</h3>
+          <p>Flexbox, Grid and media queries for every screen size.</p>
+          <div class="meta"><span>⏱ 4h</span><span>📚 15 lessons</span></div>
+        </div>
+        <div class="card course reveal" data-category="programming">
+          <div class="course-icon" style="--c:#f05032">🔧</div>
+          <h3>Git &amp; GitHub</h3>
+          <p>Version control every developer needs to know.</p>
+          <div class="meta"><span>⏱ 3h</span><span>📚 12 lessons</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag">Projects</p>
+        <h2>What you'll build</h2>
+      </div>
+      <div class="grid project-grid">
+        <div class="project reveal">
+          <div class="project-thumb" style="--g1:#6366f1;--g2:#ec4899">🛒</div>
+          <div class="project-body">
+            <h3>E-commerce Store</h3>
+            <p>Product listing, cart and checkout flow.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          </div>
+        </div>
+        <div class="project reveal">
+          <div class="project-thumb" style="--g1:#14b8a6;--g2:#3b82f6">🌦</div>
+          <div class="project-body">
+            <h3>Weather App</h3>
+            <p>Live weather data using a public API.</p>
+            <div class="tags"><span>JS</span><span>API</span></div>
+          </div>
+        </div>
+        <div class="project reveal">
+          <div class="project-thumb" style="--g1:#f59e0b;--g2:#ef4444">✅</div>
+          <div class="project-body">
+            <h3>Task Manager</h3>
+            <p>To-do app with local storage and filters.</p>
+            <div class="tags"><span>JS</span><span>LocalStorage</span></div>
+          </div>
+        </div>
+        <div class="project reveal">
+          <div class="project-thumb" style="--g1:#8b5cf6;--g2:#06b6d4">💼</div>
+          <div class="project-body">
+            <h3>Portfolio Website</h3>
+            <p>Your personal site to showcase your work.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section alt" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag">Reviews</p>
+        <h2>What our students say</h2>
+      </div>
+      <div class="slider reveal">
+        <div class="slides" id="slides">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"The projects made everything click. I landed my first frontend job 4 months after starting!"</p>
+            <div class="reviewer"><div class="avatar">PS</div><div><h4>Priya S.</h4><span>Frontend Developer</span></div></div>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Clear explanations and super helpful mentors. Best investment I've made in my career."</p>
+            <div class="reviewer"><div class="avatar">RK</div><div><h4>Rahul K.</h4><span>Student</span></div></div>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★☆</div>
+            <p>"Loved the JavaScript course. Bite-sized lessons that fit around my full-time job."</p>
+            <div class="reviewer"><div class="avatar">AM</div><div><h4>Anjali M.</h4><span>Career Switcher</span></div></div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button id="prev" aria-label="Previous review">‹</button>
+          <div class="dots-nav" id="dotsNav"></div>
+          <button id="next" aria-label="Next review">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag">Paid Courses</p>
+        <h2>Go further with premium courses</h2>
+        <div class="billing-toggle">
+          <span>One-time</span>
+          <label class="switch"><input type="checkbox" id="billingSwitch" /><span class="slider-round"></span></label>
+          <span>Monthly</span>
+        </div>
+      </div>
+      <div class="grid pricing-grid">
+        <div class="card price-card reveal">
+          <h3>Frontend Mastery</h3>
+          <p class="desc">HTML, CSS, JavaScript &amp; React</p>
+          <div class="price" data-once="1999" data-month="499"><span class="amount">₹1,999</span><small class="per"></small></div>
+          <ul>
+            <li>✔ 60+ hours of video</li>
+            <li>✔ 10 real projects</li>
+            <li>✔ Certificate</li>
+            <li class="no">✖ 1:1 mentorship</li>
+          </ul>
+          <button class="btn btn-outline enroll" data-course="Frontend Mastery">Enroll Now</button>
+        </div>
+        <div class="card price-card featured reveal">
+          <div class="ribbon">Most Popular</div>
+          <h3>Full Stack Bootcamp</h3>
+          <p class="desc">Frontend + Node.js, Express &amp; MongoDB</p>
+          <div class="price" data-once="4999" data-month="999"><span class="amount">₹4,999</span><small class="per"></small></div>
+          <ul>
+            <li>✔ 120+ hours of video</li>
+            <li>✔ 20 real projects</li>
+            <li>✔ Certificate</li>
+            <li>✔ Weekly 1:1 mentorship</li>
+          </ul>
+          <button class="btn enroll" data-course="Full Stack Bootcamp">Enroll Now</button>
+        </div>
+        <div class="card price-card reveal">
+          <h3>Python &amp; Data Science</h3>
+          <p class="desc">Python, Pandas, ML basics</p>
+          <div class="price" data-once="3499" data-month="799"><span class="amount">₹3,499</span><small class="per"></small></div>
+          <ul>
+            <li>✔ 80+ hours of video</li>
+            <li>✔ 12 real projects</li>
+            <li>✔ Certificate</li>
+            <li class="no">✖ 1:1 mentorship</li>
+          </ul>
+          <button class="btn btn-outline enroll" data-course="Python &amp; Data Science">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section alt" id="contact">
+    <div class="container contact-inner reveal">
+      <div>
+        <p class="section-tag">Contact</p>
+        <h2>Have questions? Let's talk.</h2>
+        <p>Send us a message and we'll get back to you within 24 hours.</p>
+      </div>
+      <form id="contactForm" novalidate>
+        <input type="text" id="name" placeholder="Your name" />
+        <input type="email" id="email" placeholder="Your email" />
+        <textarea id="message" rows="4" placeholder="Your message"></textarea>
+        <p class="form-msg" id="formMsg"></p>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">Learn<span>Hub</span></a>
+      <p>© <span id="year"></span> LearnHub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Enroll modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <h3>🎉 Great choice!</h3>
+      <p>You're enrolling in <strong id="modalCourse"></strong>.</p>
+      <p class="muted">Payment integration goes here (e.g. Razorpay / Stripe).</p>
+      <button class="btn" id="modalOk">Continue</button>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
 </html>
