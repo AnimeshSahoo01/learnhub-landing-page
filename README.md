@@ -1,77 +1,100 @@
-# LearnHub — Learn to Code Landing Page
+# LearnHub — Coding Course Landing Page
 
-A responsive, single-page landing site for **LearnHub**, an online coding-course platform. It showcases free courses, student projects, reviews and premium course plans, with smooth animations and interactive sections — built with plain HTML, CSS and JavaScript (no frameworks, no build step).
+A responsive landing page for an online coding school, built with **React 19** and **Vite**. It showcases free courses, student projects, reviews and paid plans, with Razorpay checkout for enrollment.
 
 ## Features
 
-- **Sticky navbar** with active-section highlighting and a mobile hamburger menu
-- **Typing animation** in the hero headline that cycles through phrases
-- **Animated counters** (students, courses, satisfaction) that count up when scrolled into view
-- **Scroll-reveal animations** using the Intersection Observer API
-- **Course filter** — filter free courses by Web, Programming or Design
-- **Projects showcase** with gradient thumbnails and tech tags
-- **Reviews slider** with prev/next buttons, dot navigation and auto-play
-- **Pricing section** with a One-time / Monthly billing toggle (prices in ₹)
-- **Enroll modal** — closes via button, backdrop click or the `Esc` key
-- **Contact form** with client-side validation (empty fields and email format)
-- **Back-to-top button** and auto-updating footer year
-- **Fully responsive** layout for desktop, tablet and mobile
+- **Sticky navbar** — changes style on scroll, highlights the active section, and collapses into a mobile hamburger menu.
+- **Hero section** — typing animation that cycles through taglines, plus animated counters for students, courses and satisfaction.
+- **About** — highlights of what the school offers.
+- **Free courses** — course cards with category filters (All / Web / Programming / Design).
+- **Projects** — gallery of projects students build.
+- **Reviews slider** — auto-rotating testimonials with previous/next arrows and dot navigation.
+- **Pricing** — three paid plans with a one-time / monthly billing toggle.
+- **Razorpay checkout** — "Enroll Now" opens a modal and launches Razorpay payment for the selected plan (closes with Esc or a click outside).
+- **Contact form** — client-side validation, with optional sending through a Formspree-style endpoint.
+- **Back-to-top button** — appears after scrolling down.
+- **Responsive** — works on desktop, tablet and mobile.
 
 ## Tech Stack
 
-| Technology | Used for |
-| --- | --- |
-| **HTML5** | Page structure and semantic sections |
-| **CSS3** | Styling, CSS variables, Flexbox, Grid, transitions, media queries |
-| **JavaScript (ES6+)** | Interactivity — DOM manipulation, events, Intersection Observer, `requestAnimationFrame` |
-| **Google Fonts (Poppins)** | Typography |
+- [React 19](https://react.dev/)
+- [Vite](https://vite.dev/)
+- [Razorpay Checkout](https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/)
+- ESLint
+- Plain CSS (no UI framework)
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 20 or newer
+- npm (comes with Node.js)
+
+### Install and run
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/AnimeshSahoo01/learnhub-landing-page.git
+cd learnhub-landing-page
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
+npm run dev
+```
+
+Open the URL shown in the terminal (usually http://localhost:5173).
+
+### Available scripts
+
+| Command           | Description                                  |
+| ----------------- | -------------------------------------------- |
+| `npm run dev`     | Start the development server with hot reload |
+| `npm run build`   | Build for production into `dist/`            |
+| `npm run preview` | Preview the production build locally         |
+| `npm run lint`    | Run ESLint                                   |
+
+## Configuration
+
+### Contact form (optional)
+
+By default the contact form only validates input and shows a thank-you message. To actually receive messages, create a free form at [Formspree](https://formspree.io/) and add a `.env` file in the project root:
+
+```env
+VITE_CONTACT_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
+Restart `npm run dev` after adding it. `.env` files are git-ignored.
+
+### Razorpay
+
+The Razorpay **test** Key ID is set in `src/components/Modal.jsx`. Replace it with your own key from the [Razorpay Dashboard](https://dashboard.razorpay.com/).
+
+> **Note:** Never put your Razorpay **Key Secret** in frontend code. For live payments, create orders and verify payment signatures on a backend server.
 
 ## Project Structure
 
 ```
-landing page/
-├── index.html   # Page markup: navbar, hero, about, courses, projects, reviews, pricing, contact, footer
-├── style.css    # All styles, theme variables and responsive breakpoints
-├── script.js    # All interactive behaviour
-└── README.md
+├── index.html          # HTML entry (loads the Razorpay script)
+├── public/             # Static files (favicon, icons)
+└── src/
+    ├── main.jsx        # React entry point
+    ├── App.jsx         # Page layout and enroll modal state
+    ├── index.css       # Global styles
+    ├── data/
+    │   └── courses.js  # Free course data
+    └── components/
+        ├── Navbar.jsx
+        ├── Hero.jsx
+        ├── About.jsx
+        ├── Courses.jsx
+        ├── Projects.jsx
+        ├── Reviews.jsx
+        ├── Pricing.jsx
+        ├── Contact.jsx
+        ├── Modal.jsx
+        ├── BackToTop.jsx
+        └── Footer.jsx
 ```
-
-## How to Run
-
-No installation or build tools are required.
-
-### Option 1 — Open directly
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/AnimeshSahoo01/learnhub-landing-page.git
-   cd learnhub-landing-page
-   ```
-2. Open `index.html` in any modern browser (double-click it, or run `open index.html` on macOS).
-
-### Option 2 — Run a local server (recommended)
-
-Using VS Code: install the **Live Server** extension, right-click `index.html` → **Open with Live Server**.
-
-Or from the terminal:
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# or Node.js
-npx serve .
-```
-
-Then visit <http://localhost:8000> (or the URL printed by `serve`).
-
-## Customization
-
-- **Colors** — edit the CSS variables in `:root` at the top of `style.css` (`--primary`, `--accent`, `--bg`, etc.).
-- **Typing phrases** — change the `words` array in `script.js`.
-- **Prices** — update the `data-once` and `data-month` attributes on each `.price` element in `index.html`.
-- **Courses** — add a new `.card.course` block with a `data-category` of `web`, `programming` or `design`.
-
-## Contribution
-
-- **Animesh Sahoo** — [@AnimeshSahoo01](https://github.com/AnimeshSahoo01)
